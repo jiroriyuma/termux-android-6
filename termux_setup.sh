@@ -1,3 +1,4 @@
+# setup storage
 termux-setup-storage
 
 # fix issues with repositories
@@ -20,4 +21,5 @@ echo "PS1='\[\e[1;32m\][\u@\h \w] \\$ \[\e[0m\]'" >> $bashrc # [u0_a115@localhos
 cd $HOME
 curl -LO https://raw.githubusercontent.com/Hax4us/TermuxAlpine/master/TermuxAlpine.sh
 bash TermuxAlpine.sh
+clear
 startalpine
