@@ -7,7 +7,8 @@ sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://packages-cf.termux.org/termux-
 apt update && apt upgrade -y
 
 # essensial packages
-pkg -y install sopenssh nano git aria2
+pkg -y install openssh nano git aria2
+echo 'sshd -p 8022' >> $bashrc # setup shell autorun
 
 # setting up bash
 bashrc=$HOME/../usr/etc/bash.bashrc
@@ -22,4 +23,5 @@ cd $HOME
 curl -LO https://raw.githubusercontent.com/Hax4us/TermuxAlpine/master/TermuxAlpine.sh
 bash TermuxAlpine.sh
 clear
+echo 'startalpine' >> $bashrc # setup alpine autorun
 startalpine

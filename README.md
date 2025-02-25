@@ -11,7 +11,7 @@ curl -LO https://raw.githubusercontent.com/jiroriyuma/termux-android-6/main/term
 ### Installing Essential Development Tools  
 Once Alpine Linux is installed, run this command inside the Alpine shell to set up essential development tools:  
 ```bash  
-wget -qO- "https://raw.githubusercontent.com/jiroriyuma/termux-android-6/main/termux_alpine_setup.sh" | bash  
+wget -qO- "https://raw.githubusercontent.com/jiroriyuma/termux-android-6/main/termux_alpine_setup.sh" | sh  
 ```  
 
 ### Included Tools  
@@ -24,10 +24,9 @@ wget -qO- "https://raw.githubusercontent.com/jiroriyuma/termux-android-6/main/te
 - **Java**  
 
 ### VS Code Remote SSH Setup  
-
 1. Install the **Remote - SSH** extension in VS Code.  
 2. Add the following SSH connection command:  
-   ```  
-   ssh -p 8022 root@<ip-address>  
+   ```bash
+   ssh -p 8023 root@<ip-address>  
    ```  
 3. Select **Linux** as the platform.
