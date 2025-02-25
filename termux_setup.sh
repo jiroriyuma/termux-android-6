@@ -6,12 +6,12 @@ rm $PREFIX/etc/apt/sources.list.d/* &>/dev/null 2>&1
 sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://packages-cf.termux.org/termux-main-21 stable main@' $PREFIX/etc/apt/sources.list
 apt update && apt upgrade -y
 
+# setting up bash
+bashrc=$HOME/../usr/etc/bash.bashrc
+
 # essensial packages
 pkg -y install openssh nano git aria2
 echo 'sshd -p 8022' >> $bashrc # setup shell autorun
-
-# setting up bash
-bashrc=$HOME/../usr/etc/bash.bashrc
 
 # just replacing the old variables 
 echo 'clear' >> $bashrc # clear screen
