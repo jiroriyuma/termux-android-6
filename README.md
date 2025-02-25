@@ -7,7 +7,7 @@ Run the following command in Termux to install Alpine Linux:
 ```bash  
 curl -LO https://raw.githubusercontent.com/jiroriyuma/termux-android-6/main/termux_setup.sh && bash termux_setup.sh 
 ```  
-
+> Type **startalpine** to log in again.
 ### Installing Essential Development Tools  
 Once Alpine Linux is installed, run this command inside the Alpine shell to set up essential development tools:  
 ```bash  

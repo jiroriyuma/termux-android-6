@@ -1,12 +1,8 @@
-## its not working :(
-# installing bash
-# bashrc=$HOME/bash.bashrc
-# apk add bash
-# echo "exec bash" >> ~/.profile
-# echo "PS1='\[\e[1;32m\][\u@\h \w] \\$ \[\e[0m\]'" >> $bashrc # [u0_a115@localhost ~] $
-
 # recommended packages
-apk add git nano
+apk add git nano bash
+bashrc=/etc/bash/bashrc
+echo "exec bash" >> $HOME/.profile
+echo "PS1='\[\e[1;32m\][\u@\h \w] \\$ \[\e[0m\]'" >> $bashrc
 
 ## i will make a setup with a password soon
 # setup vscode ssh server (no password setup). to connect "ssh -p 8023 root@<ip-address>"
@@ -14,9 +10,10 @@ apk add gcompat libstdc++ openssh openssh-server
 ssh-keygen -A
 passwd -d root
 
-echo "/usr/sbin/sshd -p 8023" >> ~/.profile # setup autorun for ssh
+echo "/usr/sbin/sshd -p 8023" >> $bashrc # setup autorun for ssh
 
 ssh_config_file="/etc/ssh/sshd_config"
+rm $ssh_config_file # just delete it
 echo "PermitEmptyPasswords yes" >> $ssh_config_file
 echo "PasswordAuthentication yes" >> $ssh_config_file
 echo "PermitRootLogin yes" >> $ssh_config_file
