@@ -1,11 +1,11 @@
 # Termux Setup for Android 6 Marshmallow  
 
-This guide explains how to set up **Alpine Linux** on **Termux** for Android 6 Marshmallow.  
+Alpine Linux enables unsupported Android devices to run the latest package versions, as Termux no longer supports Android 6. This guide explains how to set up Alpine Linux on Termux for Android 6 Marshmallow.
 
-### Installing Alpine Linux  
+### Installing Alpine Linux
 Run the following command in Termux to install Alpine Linux:  
 ```bash  
-curl -sL https://raw.githubusercontent.com/jiroriyuma/termux-android-6/main/termux_setup.sh | bash  
+curl -LO https://raw.githubusercontent.com/jiroriyuma/termux-android-6/main/termux_setup.sh && bash termux_setup.sh 
 ```  
 
 ### Installing Essential Development Tools  
@@ -15,11 +15,19 @@ wget -qO- "https://raw.githubusercontent.com/jiroriyuma/termux-android-6/main/te
 ```  
 
 ### Included Tools  
-The script will automatically install the following:  
-- **Nano** – Text Editor
-- **VS Code Server** – Remote development  
-- **SSH Server** – Secure remote access  
-- **C and C++ Compilers** – For building applications  
-- **Python** – Scripting and development  
-- **Node.js** – JavaScript runtime  
-- **Java** – For running Java applications  
+- **Nano**
+- **VS Code Server** (I set up no password for this because I'm still having trouble setting up the SSH server)
+- **SSH Server**
+- **C and C++ Compilers** 
+- **Python**
+- **Node.js**
+- **Java**  
+
+### VS Code Remote SSH Setup  
+
+1. Install the **Remote - SSH** extension in VS Code.  
+2. Add the following SSH connection command:  
+   ```  
+   ssh -p 8022 root@<ip-address>  
+   ```  
+3. Select **Linux** as the platform.
