@@ -23,5 +23,4 @@ cd $HOME
 curl -LO https://raw.githubusercontent.com/Hax4us/TermuxAlpine/master/TermuxAlpine.sh
 bash TermuxAlpine.sh
 clear
-echo 'startalpine' >> $bashrc # setup alpine autorun
 startalpine
