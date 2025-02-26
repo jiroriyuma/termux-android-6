@@ -4,7 +4,7 @@ termux-setup-storage
 # fix issues with repositories
 rm $PREFIX/etc/apt/sources.list.d/* &>/dev/null 2>&1
 sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://packages-cf.termux.org/termux-main-21 stable main@' $PREFIX/etc/apt/sources.list
-pkg -y install openssh nano git aria2 # essensial packages
+pkg install -y openssh nano git aria2 # essensial packages
 apt update && apt upgrade -y
 
 # fix issues again after updating
