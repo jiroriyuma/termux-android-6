@@ -4,7 +4,7 @@ termux-setup-storage
 # fix issues with repositories
 rm $PREFIX/etc/apt/sources.list.d/* &>/dev/null 2>&1
 sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://packages-cf.termux.org/termux-main-21 stable main@' $PREFIX/etc/apt/sources.list
-
+pkg -y install openssh nano git aria2 # essensial packages
 apt update && apt upgrade -y
 
 # fix issues again after updating
@@ -14,8 +14,6 @@ sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://packages-cf.termux.org/termux-
 # setting up bash
 bashrc=$HOME/../usr/etc/bash.bashrc
 
-# essensial packages
-pkg -y install openssh nano git aria2
 echo 'sshd -p 8022' >> $bashrc # setup shell autorun
 
 # just replacing the old variables 
