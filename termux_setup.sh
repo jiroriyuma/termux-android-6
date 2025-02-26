@@ -26,4 +26,5 @@ curl -LO https://raw.githubusercontent.com/Hax4us/TermuxAlpine/master/TermuxAlpi
 bash TermuxAlpine.sh
 clear
 startalpine
+
 exit
