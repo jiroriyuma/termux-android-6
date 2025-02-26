@@ -7,7 +7,7 @@ sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://packages-cf.termux.org/termux-
 
 # upgrade and install essensial packages
 apt-mark hold apt termux-tools
-apt upgrade -y
+apt update && apt upgrade -y
 apt install openssh nano git aria2 -y 
 
 # setting up bash
