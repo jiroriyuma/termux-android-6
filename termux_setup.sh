@@ -4,7 +4,12 @@ termux-setup-storage
 # fix issues with repositories
 rm $PREFIX/etc/apt/sources.list.d/* &>/dev/null 2>&1
 sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://packages-cf.termux.org/termux-main-21 stable main@' $PREFIX/etc/apt/sources.list
+
 apt update && apt upgrade -y
+
+# fix issues again after updating
+rm $PREFIX/etc/apt/sources.list.d/* &>/dev/null 2>&1
+sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://packages-cf.termux.org/termux-main-21 stable main@' $PREFIX/etc/apt/sources.list
 
 # setting up bash
 bashrc=$HOME/../usr/etc/bash.bashrc
@@ -24,3 +29,4 @@ curl -LO https://raw.githubusercontent.com/Hax4us/TermuxAlpine/master/TermuxAlpi
 bash TermuxAlpine.sh
 clear
 startalpine
+exit
